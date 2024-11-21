@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         btnTipoProducto.setOnClickListener(v -> {
-            Intent it = new Intent(this, Cliente.class);
+            Intent it = new Intent(this, TipoProducto.class);
             startActivity(it);
         });
 

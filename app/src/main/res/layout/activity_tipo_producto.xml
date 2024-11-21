@@ -7,4 +7,14 @@
     android:layout_height="match_parent"
     tools:context=".TipoProducto">
 
+    <TextView
+        android:id="@+id/txtTipoProducto"
+        android:layout_width="376dp"
+        android:layout_height="689dp"
+        android:text="TextView"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
