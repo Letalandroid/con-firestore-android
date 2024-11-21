@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnClientes = findViewById(R.id.btnClientes);
         btnProductos = findViewById(R.id.btnProductos);
-        btnProovedor = findViewById(R.id.btnClientes);
+        btnProovedor = findViewById(R.id.btnProovedor);
         btnTipoProducto = findViewById(R.id.btnTipoProducto);
         btnVenta = findViewById(R.id.btnVenta);
 
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         btnProovedor.setOnClickListener(v -> {
-            Intent it = new Intent(this, Cliente.class);
+            Intent it = new Intent(this, Proovedor.class);
             startActivity(it);
         });
 
