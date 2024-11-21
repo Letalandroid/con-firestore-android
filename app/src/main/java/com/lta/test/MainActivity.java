@@ -1,51 +1,57 @@
 package com.lta.test;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.widget.Button;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String TAG = "FirestoreLog";
+    Button btnClientes;
+    Button btnProductos;
+    Button btnProovedor;
+    Button btnTipoProducto;
+    Button btnVenta;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        FirebaseApp.initializeApp(this); // Inicializa Firebase
+        FirebaseApp.initializeApp(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        try {
-            // Obtener la instancia de Firestore
-            FirebaseFirestore db = FirebaseFirestore.getInstance();
+        btnClientes = findViewById(R.id.btnClientes);
+        btnProductos = findViewById(R.id.btnProductos);
+        btnProovedor = findViewById(R.id.btnClientes);
+        btnTipoProducto = findViewById(R.id.btnTipoProducto);
+        btnVenta = findViewById(R.id.btnVenta);
 
-            // Leer los documentos de la colección "usuarios"
-            db.collection("usuarios")
-                    .get()
-                    .addOnCompleteListener(task -> {
-                        if (task.isSuccessful()) {
-                            QuerySnapshot documentSnapshots = task.getResult();
-                            if (documentSnapshots != null) {
-                                for (QueryDocumentSnapshot document : documentSnapshots) {
-                                    Log.d(TAG, "Document ID: " + document.getId() + " => " + document.getData());
-                                }
-                            } else {
-                                Log.d(TAG, "No documents found.");
-                            }
-                        } else {
-                            Log.e(TAG, "Error getting documents: ", task.getException());
-                        }
-                    });
+        btnClientes.setOnClickListener(v -> {
+            Intent it = new Intent(this, Cliente.class);
+            startActivity(it);
+        });
 
-        } catch (Exception e) {
-            Log.i(TAG, e.toString());
-        }
+        btnProductos.setOnClickListener(v -> {
+            Intent it = new Intent(this, Productos.class);
+            startActivity(it);
+        });
+
+        btnProovedor.setOnClickListener(v -> {
+            Intent it = new Intent(this, Cliente.class);
+            startActivity(it);
+        });
+
+        btnTipoProducto.setOnClickListener(v -> {
+            Intent it = new Intent(this, Cliente.class);
+            startActivity(it);
+        });
+
+        btnVenta.setOnClickListener(v -> {
+            Intent it = new Intent(this, Cliente.class);
+            startActivity(it);
+        });
     }
 
 }
