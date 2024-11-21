@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         btnVenta.setOnClickListener(v -> {
-            Intent it = new Intent(this, Cliente.class);
+            Intent it = new Intent(this, Venta.class);
             startActivity(it);
         });
     }
